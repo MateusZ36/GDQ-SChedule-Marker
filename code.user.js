@@ -5,7 +5,10 @@
 // @grant       none
 // @version     1.0
 // @author      MateusZ3
-// @description 04/01/2021 15:12:31
+// @homepageURL https://github.com/MateusZ36/GDQ-SChedule-Marker
+// @downloadURL https://github.com/MateusZ36/GDQ-SChedule-Marker/raw/main/code.user.js
+// @updateURL   https://github.com/MateusZ36/GDQ-SChedule-Marker/raw/main/code.user.js
+// @description Highlights the current run in the event
 // ==/UserScript==
 
 const table_rows = $("#runTable tbody tr")
