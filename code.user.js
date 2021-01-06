@@ -3,7 +3,7 @@
 // @namespace   https://github.com/MateusZ36
 // @match       https://gamesdonequick.com/schedule
 // @grant       none
-// @version     1.3
+// @version     1.3.1
 // @author      MateusZ3
 // @homepageURL https://github.com/MateusZ36/GDQ-SChedule-Marker
 // @downloadURL https://github.com/MateusZ36/GDQ-SChedule-Marker/raw/main/code.user.js
@@ -51,7 +51,6 @@ for(i=0;i<table_rows.length;i++){
   }
   
   if(i==table_rows.length-1){
-    console.log("ultima linha")
     run_time = new Date($(table_rows[i-1]).children('td.start-time').html())
     run_time = run_time.sum_str($(table_rows[i]).children("td.text-right").text())    
     if(current_date < run_time){
