@@ -3,13 +3,14 @@
 // @namespace   https://github.com/MateusZ36
 // @match       https://gamesdonequick.com/schedule
 // @grant       none
-// @version     1.1
+// @version     1.2
 // @author      MateusZ3
 // @homepageURL https://github.com/MateusZ36/GDQ-SChedule-Marker
 // @downloadURL https://github.com/MateusZ36/GDQ-SChedule-Marker/raw/main/code.user.js
 // @updateURL   https://github.com/MateusZ36/GDQ-SChedule-Marker/raw/main/code.user.js
-// @description Highlights the current run in the event
 // ==/UserScript==
+
+
 
 function GM_addStyle(cssStr) {
     var D = document;
@@ -33,8 +34,12 @@ const data_atual = new Date()
 for(i=0;i<table_rows.length;i++){
   if(table_rows[0].className == ""){
     if(new Date($(table_rows[i]).children('td.start-time').html()) > data_atual){
-      $(table_rows[i-2]).addClass("current").next().addClass("current")
+      $(table_rows[i-2]).addClass("current").attr('id', 'current').next().addClass("current")
       break
     }
   }
 }
+
+var link = $("<a></a>").text("Scroll to current run").prepend("<br>")
+link.attr("href","#current")
+$("#white-bg > div.container.text-center > h4").append(link)
